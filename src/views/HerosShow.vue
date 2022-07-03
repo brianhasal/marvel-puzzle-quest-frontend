@@ -15,7 +15,17 @@ import axios from 'axios';
           this.hero = response.data;
         })
     },
-    methods: {},
+    methods: {
+      destroyHero: function(hero) {
+        axios
+          .delete("/heroes/" + hero.id)
+          .then((response) => {
+            console.log("destroying hero", response);
+            this.$router.push("/heroes");
+          })
+          
+      }
+    },
   };
 </script>
 
@@ -58,7 +68,11 @@ import axios from 'axios';
             </div>
           </div>
           <div>
+            <button v-on:click="destroyHero(hero)">Delete Hero</button>
+            <br>
             <a v-bind:href="`/heroes/${hero.id}/edit`">Edit Hero</a>
+            <br>
+            <a href="/heroes">All Heroes</a>
           </div>
         </div>
       </div>
