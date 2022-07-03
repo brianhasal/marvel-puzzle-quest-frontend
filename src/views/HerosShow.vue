@@ -1,18 +1,18 @@
 <script>
-  import axios from "axios";
+import axios from 'axios';
 
   export default {
     data: function () {
       return {
-        heros: [],
+        hero: {},
       };
     },
     created: function () {
       axios
-        .get("/heroes")
+        .get("/heroes/" + this.$route.params.id)
         .then((response) => {
-          console.log("indexing heroes", response.data);
-          this.heros = response.data;
+          console.log("retrieving hero", response);
+          this.hero = response.data;
         })
     },
     methods: {},
@@ -21,8 +21,7 @@
 
 <template>
   <div class="home">
-    <h1>Heroes Index</h1>
-    <div v-for="hero in heros" v-bind:key="hero.id">
+    <h1>Hero Show</h1>
       <div>
         <img v-bind:src="hero.cover_url" alt="">
         <img v-bind:src="hero.mpq_art_url" alt="">
@@ -60,8 +59,6 @@
           </div>
         </div>
       </div>
-      <a v-bind:href="`/heroes/${hero.id}`">Click for More</a>
-    </div>
   </div>
 </template>
 

@@ -5,6 +5,8 @@ import LoginView from "../views/LoginView.vue"
 import LogoutView from "../views/LogoutView.vue"
 import HerosIndex from "../views/HerosIndex.vue"
 import HerosNew from "../views/HerosNew.vue"
+import HerosShow from "../views/HerosShow.vue"
+
 
 
 const routes = [
@@ -45,6 +47,11 @@ const routes = [
     path: "/heroes/new", 
     name: "heros new", 
     component: HerosNew 
+  },
+  { 
+    path: "/heroes/:id", 
+    name: "heros show", 
+    component: HerosShow 
   }
 ]
 
