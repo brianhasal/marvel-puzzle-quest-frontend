@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import SignupView from "../views/SignupView.vue"
 import LoginView from "../views/LoginView.vue"
 import LogoutView from "../views/LogoutView.vue"
+import HerosIndex from "../views/HerosIndex.vue"
 
 
 const routes = [
@@ -33,6 +34,11 @@ const routes = [
     path: "/logout", 
     name: "logout", 
     component: LogoutView 
+  },
+  { 
+    path: "/heroes", 
+    name: "heros index", 
+    component: HerosIndex 
   }
 ]
 
