@@ -57,6 +57,9 @@ import axios from 'axios';
               <p class="Power Description">{{hero.third_power_description_alt}}</p>
             </div>
           </div>
+          <div>
+            <a v-bind:href="`/heroes/${hero.id}/edit`">Edit Hero</a>
+          </div>
         </div>
       </div>
   </div>

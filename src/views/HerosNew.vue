@@ -26,29 +26,31 @@ import axios from 'axios';
     <h1>Heroes Creation Page</h1>
     <div class="Hero Params">
       <div>
-        <div>
-          Hero Name: 
-          <input v-model="newHeroParams.name" type="text">
-        </div>
-        <div>
-          Subname: 
-          <input v-model="newHeroParams.subname" type="text">
-        </div>        
-        <div>
-          Stars: 
-          <input v-model="newHeroParams.stars" type="text">
-        </div>        
-        <div>
-          Marvel Character ID: 
-          <input v-model="newHeroParams.character_id" type="text">
-        </div>        
-        <div>
-          Marvel Cover Art ID: 
-          <input v-model="newHeroParams.cover_art_id" type="text">
-        </div>        
-        <div>
-          MPQ Description:  
-          <input v-model="newHeroParams.game_description" type="text">
+        <div class="Create Hero Main">
+          <div>
+            Hero Name: 
+            <input v-model="newHeroParams.name" type="text">
+          </div>
+          <div>
+            Subname: 
+            <input v-model="newHeroParams.subname" type="text">
+          </div>        
+          <div>
+            Stars: 
+            <input v-model="newHeroParams.stars" type="text">
+          </div>        
+          <div>
+            Marvel Character ID: 
+            <input v-model="newHeroParams.character_id" type="text">
+          </div>        
+          <div>
+            Marvel Cover Art ID: 
+            <input v-model="newHeroParams.cover_art_id" type="text">
+          </div>        
+          <div>
+            MPQ Description:  
+            <input v-model="newHeroParams.game_description" type="text">
+          </div>
         </div>
 
         <div class="Image Inputs">

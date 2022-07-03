@@ -6,6 +6,7 @@ import LogoutView from "../views/LogoutView.vue"
 import HerosIndex from "../views/HerosIndex.vue"
 import HerosNew from "../views/HerosNew.vue"
 import HerosShow from "../views/HerosShow.vue"
+import HerosEdit from "../views/HerosEdit.vue"
 
 
 
@@ -52,6 +53,11 @@ const routes = [
     path: "/heroes/:id", 
     name: "heros show", 
     component: HerosShow 
+  },
+  { 
+    path: "/heroes/:id/edit", 
+    name: "heros edit", 
+    component: HerosEdit 
   }
 ]
 
