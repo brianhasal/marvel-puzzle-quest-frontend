@@ -7,6 +7,7 @@ import HerosIndex from "../views/HerosIndex.vue"
 import HerosNew from "../views/HerosNew.vue"
 import HerosShow from "../views/HerosShow.vue"
 import HerosEdit from "../views/HerosEdit.vue"
+import MyHerosIndex from "../views/MyHerosIndex.vue"
 
 
 
@@ -58,6 +59,11 @@ const routes = [
     path: "/heroes/:id/edit", 
     name: "heros edit", 
     component: HerosEdit 
+  },
+  { 
+    path: "/my_heroes", 
+    name: "my heroes Index", 
+    component: MyHerosIndex 
   }
 ]
 

@@ -7,7 +7,9 @@
     <router-link to="/logout">Logout</router-link> |
     <router-link to="/heroes">All Heroes</router-link> |
     <router-link to="/heroes/new">Create Hero</router-link> |
-    
+    <router-link to="/my_heroes">My Hero Collection</router-link> |
+
+
 
   </nav>
   <router-view/>

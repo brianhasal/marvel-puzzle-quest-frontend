@@ -4,14 +4,14 @@
   export default {
     data: function () {
       return {
-        heros: [],
+        heros: []
       };
     },
     created: function () {
       axios
-        .get("/heroes.json")
+        .get("/my_heroes.json")
         .then((response) => {
-          console.log("indexing heroes", response.data);
+          console.log("gathering my heroes", response);
           this.heros = response.data;
         })
     },
@@ -20,10 +20,15 @@
 </script>
 
 <template>
-  <div class="home">
-    <h1>Heroes Index</h1>
+  <div class="myHeroes">
+    <h1>My Heroes</h1>
     <div v-for="hero in heros" v-bind:key="hero.id">
       <div>
+        <h2>{{hero.first_power_count}}</h2>
+        <h2>{{hero.second_power_count}}</h2>
+        <h2>{{hero.third_power_count}}</h2>
+      </div>
+      <div class="heroesInfo">
         <img v-bind:src="hero.cover_url" alt="">
         <img v-bind:src="hero.mpq_art_url" alt="">
         <h1>{{hero.name}} - {{hero.subname}}</h1>
@@ -60,7 +65,6 @@
           </div>
         </div>
       </div>
-      <a v-bind:href="`/heroes/${hero.id}.json`">Click for More</a>
     </div>
   </div>
 </template>
