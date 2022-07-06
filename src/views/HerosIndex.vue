@@ -4,7 +4,7 @@
   export default {
     data: function () {
       return {
-        heros: [],
+        heros: []
       };
     },
     created: function () {
@@ -15,7 +15,19 @@
           this.heros = response.data;
         })
     },
-    methods: {},
+    methods: {
+      createMyHero: function(hero) {
+        axios
+          .post("/my_heroes.json", {hero_id: hero.id})
+          .then((response) => {
+            console.log("Adding hero to roster", response);
+            this.$router.push("/my_heroes");
+          })
+          .catch((error) => {
+            console.log("my_heros create error", error.response);
+          });
+      }
+    },
   };
 </script>
 
@@ -29,9 +41,9 @@
         <h1>{{hero.name}} - {{hero.subname}}</h1>
         <div class="Game Description">
           <p>{{hero.game_description}}</p>
+          <h2>{{hero.stars}} Star</h2>
         </div>
         <div>
-          <h2>{{hero.stars}} Star</h2>
           <div class="Base Powers">
             <div class="First Base Power">
               <h3 class="Power Title">{{hero.first_power_name}}: {{hero.first_power_color}} - {{hero.first_power_cost}}</h3>
@@ -59,8 +71,9 @@
             </div>
           </div>
         </div>
+        <button v-on:click="createMyHero(hero)">Add to Roster</button>
+        <a v-bind:href="`/heroes/${hero.id}.json`">Click for More</a>
       </div>
-      <a v-bind:href="`/heroes/${hero.id}.json`">Click for More</a>
     </div>
   </div>
 </template>
