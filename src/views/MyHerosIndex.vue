@@ -16,7 +16,16 @@
           this.my_heros = response.data;
         })
     },
-    methods: {},
+    methods: {
+      destroyMyHero: function(my_hero) {
+        axios
+          .delete("/my_heroes/" + my_hero.id)
+          .then((response) => {
+            console.log("Destroyed My Hero", response);
+            this.$router.push("/my_heroes")
+          })
+      }
+    },
   };
 </script>
 
@@ -64,6 +73,7 @@
               <p class="Power Description">{{my_hero.hero.third_power_description_alt}}</p>
             </div>
           </div>
+          <button v-on:click="destroyMyHero(my_hero)">Destroy Hero</button>
         </div>
       </div>
     </div>
