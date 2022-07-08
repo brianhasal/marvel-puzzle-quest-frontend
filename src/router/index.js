@@ -8,6 +8,7 @@ import HerosNew from "../views/HerosNew.vue"
 import HerosShow from "../views/HerosShow.vue"
 import HerosEdit from "../views/HerosEdit.vue"
 import MyHerosIndex from "../views/MyHerosIndex.vue"
+import ComicvineHerosShow from "../views/ComicvineHerosShow.vue"
 
 
 
@@ -64,6 +65,11 @@ const routes = [
     path: "/my_heroes", 
     name: "my heroes Index", 
     component: MyHerosIndex 
+  },
+  { 
+    path: "/comicvine/", 
+    name: "Comicvine Hero Show", 
+    component: ComicvineHerosShow
   }
 ]
 
