@@ -4,7 +4,17 @@ import axios from "axios"
   export default {
     data: function () {
       return {
-        hero: {},
+        hero: {
+          first_appeared_in_issue: {
+            api_detail_url: "",
+            id: 0,
+            name: "",
+            issue_number: ""
+          },
+          image: {
+            super_url: ""
+          }
+        },
         searchCharacterParams: {
           input_name: "",
         }
@@ -26,14 +36,42 @@ import axios from "axios"
 
 <template>
   <div class="home">
-    Character Name:
-    <input v-model="searchCharacterParams.input_name" type="text">
-    <button v-on:click="showComicvineHero()">Submit</button>
-    <div>
-        <h1>{{hero.aliases}}</h1>
-    </div>
+    <div class="backgrounder" :style="{ 'background-image': `url(${hero.image.super_url})` }">
+      Character Name:
+      <input v-model="searchCharacterParams.input_name" type="text">
+      <button v-on:click="showComicvineHero()">Submit</button>
+      <div>
+        <div>
+          <h1>{{hero.aliases}}</h1>
+          <h3>{{hero.deck}}</h3>
+          <br>
+          <p>{{hero.first_appeared_in_issue.name}} # {{hero.first_appeared_in_issue.issue_number}}</p>
+          <a v-bind:href="`${hero.api_detail_url} + {}`">Hero Page Comicvine - No APIKEY</a>
+        </div>
 
+
+
+
+
+
+
+
+
+      </div>
+    </div>
   </div>
 </template>
 
-<style></style>
+<style>
+
+  .backgrounder {
+    background-repeat: no-repeat;
+    width: 100%;
+    /* background-size: contain; */
+    background-position: center;
+    background-color: black;
+  }
+
+</style>
+
+
