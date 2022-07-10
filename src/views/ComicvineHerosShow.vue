@@ -42,20 +42,14 @@ import axios from "axios"
       <button v-on:click="showComicvineHero()">Submit</button>
       <div>
         <div>
-          <h1>{{hero.aliases}}</h1>
+          <h1>{{hero.name}}</h1>
+          <h2>{{hero.real_name}}</h2>
+          <h2>{{hero.aliases}}</h2>
           <h3>{{hero.deck}}</h3>
           <br>
           <p>{{hero.first_appeared_in_issue.name}} # {{hero.first_appeared_in_issue.issue_number}}</p>
           <a v-bind:href="`${hero.api_detail_url} + {}`">Hero Page Comicvine - No APIKEY</a>
         </div>
-
-
-
-
-
-
-
-
 
       </div>
     </div>
@@ -67,9 +61,10 @@ import axios from "axios"
   .backgrounder {
     background-repeat: no-repeat;
     width: 100%;
-    /* background-size: contain; */
+    background-size: contain;
     background-position: center;
     background-color: black;
+    border: 1px solid pink;
   }
 
 </style>
