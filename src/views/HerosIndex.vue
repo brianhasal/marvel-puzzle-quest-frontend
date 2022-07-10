@@ -34,8 +34,54 @@
 <template>
   <div class="home">
     <h1>Heroes Index</h1>
-    <div v-for="hero in heros" v-bind:key="hero.id">
-      <div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div v-for="hero in heros" v-bind:key="hero.id">
+        <div class="col">
+          <div class="card" >
+            <div @mouseover="hero.hover = !hero.hover" @mouseleave="hero.hover = !hero.hover">
+              <img v-if="hero.hover" class="card-img-top" :src="`${hero.mpq_art_url}`" alt="">
+              <img v-else class="card-img-top" :src="`${hero.cover_url}`" alt="">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{hero.name}} <h6>{{hero.stars}} Stars</h6></h5> 
+              <!-- if subname exists, add subname here -->
+
+              <button>Add to Roster</button>
+              <button>Stats</button>
+              <a v-bind:href="`/heroes/${hero.id}.json`">Click for More</a>
+              <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+      <!-- <div>
         <img v-bind:src="hero.cover_url" alt="">
         <img v-bind:src="hero.mpq_art_url" alt="">
         <h1>{{hero.name}} - {{hero.subname}}</h1>
@@ -73,9 +119,18 @@
         </div>
         <button v-on:click="createMyHero(hero)">Add to Roster</button>
         <a v-bind:href="`/heroes/${hero.id}.json`">Click for More</a>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
-<style></style>
+<style>
+  .card-img-top {
+    max-width: 200px;
+  }
+
+  .card {
+    max-width: 202px;
+    
+  }
+</style>

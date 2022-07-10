@@ -73,6 +73,7 @@
               <p class="Power Description">{{my_hero.hero.third_power_description_alt}}</p>
             </div>
           </div>
+          
           <button v-on:click="destroyMyHero(my_hero)">Destroy Hero</button>
         </div>
       </div>
