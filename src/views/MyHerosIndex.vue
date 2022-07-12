@@ -1,11 +1,13 @@
 <script>
   import axios from "axios";
+  import StarRating from 'vue-star-rating'
 
   export default {
     data: function () {
       return {
         my_heros: [],
-
+        rating: 0,
+        editMyHeroParams: {}
       };
     },
     created: function () {
@@ -17,6 +19,14 @@
         })
     },
     methods: {
+      editMyHero: function(my_hero) {
+        axios
+          .patch("/my_heroes/" + my_hero.id + ".json", my_hero)
+          .then((response) => {
+            console.log("Updated Rating", response.data);
+
+          })
+      },
       destroyMyHero: function(my_hero) {
         axios
           .delete("/my_heroes/" + my_hero.id)
@@ -24,16 +34,27 @@
             console.log("Destroyed My Hero", response);
             this.$router.push("/my_heroes")
           })
+      },
+      setRating: function(rating, my_hero) {
+        console.log(rating, my_hero)
+        this.editMyHero(my_hero)
+        this.rating = rating;
       }
     },
+    components: {
+      StarRating
+    }
   };
 </script>
+
+
 
 <template>
   <div class="myHeros">
     <h1>My Heroes</h1>
     <div v-for="my_hero in my_heros" v-bind:key="my_hero.id">
       <div>
+        <star-rating v-model:rating=my_hero.first_power_count @update:rating ="setRating(rating,my_hero)"></star-rating>
         <h2>{{my_hero.first_power_count}}</h2>
         <h2>{{my_hero.second_power_count}}</h2>
         <h2>{{my_hero.third_power_count}}</h2>
@@ -73,7 +94,7 @@
               <p class="Power Description">{{my_hero.hero.third_power_description_alt}}</p>
             </div>
           </div>
-          
+
           <button v-on:click="destroyMyHero(my_hero)">Destroy Hero</button>
         </div>
       </div>
