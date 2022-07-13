@@ -30,11 +30,13 @@ import axios from 'axios';
 </script>
 
 <template>
-  <div class="home">
-    <h1>Hero Show</h1>
+  <div class="home container">
+    <h1 class="text-center">Hero Show</h1>
       <div>
-        <img v-bind:src="hero.cover_url" alt="">
-        <img v-bind:src="hero.mpq_art_url" alt="">
+        <div class="image_container">
+          <img class="show_images" v-bind:src="hero.cover_url" alt="">
+          <img class="show_images" v-bind:src="hero.mpq_art_url" alt="">
+        </div>
         <h1>{{hero.name}} - {{hero.subname}}</h1>
         <div class="Game Description">
           <p>{{hero.game_description}}</p>
@@ -79,4 +81,14 @@ import axios from 'axios';
   </div>
 </template>
 
-<style></style>
+<style>
+.show_images {
+  max-height: 740px;
+  align-self: auto;
+}
+
+.image_container {
+  margin: auto;
+  display: block;
+}
+</style>

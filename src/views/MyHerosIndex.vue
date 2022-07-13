@@ -51,7 +51,7 @@
 
 <template>
   <div class="myHeros">
-    <h1>My Heroes</h1>
+    <!-- <h1>My Heroes</h1> -->
     <div v-for="my_hero in my_heros" v-bind:key="my_hero.id">
       <div>
         <!-- <div class="row">
@@ -129,8 +129,13 @@
 
             <div class="col-md-2"><img v-bind:src="my_hero.hero.mpq_art_url" class="img-fluid" alt=""></div>
           </div>
-          <button v-on:click="destroyMyHero(my_hero)">Destroy Hero</button>
-          <a :href="`/comicvine/?q=${my_hero.hero.name}`">Hero Achievements</a>
+          
+          <div class="links">
+            <button v-on:click="destroyMyHero(my_hero)">Destroy Hero</button>
+            <a :href="`/comicvine/?q=${my_hero.hero.name}`">Hero Achievements</a>
+          </div>
+          <br>
+          <br>
         </div>
 
 
@@ -182,7 +187,11 @@
 </template>
 
 <style>
-.row {
-  
+.myHeros {
+  margin-top: 0;
+}
+
+.links {
+  text-align: center;
 }
 </style>

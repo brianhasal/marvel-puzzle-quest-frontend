@@ -11,6 +11,7 @@ export default {
           name: "",
           issue_number: "",
         },
+        description: "",
         image: {
           super_url: "",
         },
@@ -22,7 +23,7 @@ export default {
         thumbnail: {
           path: "",
         },
-        urls: [],
+        url: ""
       },
     };
   },
@@ -30,6 +31,9 @@ export default {
     if (this.$route.query.q) {
       this.searchCharacterParams.input_name = this.$route.query.q;
       this.showComicvineHero();
+      this.showMarvelHero();
+
+      
     }
   },
   methods: {
@@ -41,9 +45,9 @@ export default {
       });
     },
     showMarvelHero: function () {
-      axios.get("/comicvine/character_by_id.json", { character_id: 1009610 }).then((response) => {
+      axios.get("/comicvine/character_by_id.json").then((response) => {
         console.log("Retreived Hero From Marvel", response.data);
-        this.marvel_hero = response.data;
+        this.marvel_hero.url = response.data;
       });
     },
   },
@@ -52,29 +56,41 @@ export default {
 
 <template>
   <div class="home">
-    <div class="backgrounder" :style="{ 'background-image': `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${hero.image.super_url})` }">
+    <div class="for_header"></div>
       <div class="container">
-        Character Name:
-        <input v-model="searchCharacterParams.input_name" type="text" />
-        <button
-          v-on:click="
-            showComicvineHero();
-            showMarvelHero();
-          "
-        >
-          Submit
-        </button>
+        <div class="image-fita" :style="{ 'background-image': `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(${hero.image.super_url})` }">
+        <div class="text-center">
+          Character Name:
+          <input v-model="searchCharacterParams.input_name" type="text" />
+          <button
+            v-on:click="
+              showComicvineHero();
+              showMarvelHero();
+            "
+          >
+            Submit
+          </button>
+
+        </div> 
         <div>
           <div>
-            <h1>{{ hero.name }}</h1>
-            <h2>{{ hero.real_name }}</h2>
-            <h2>{{ hero.aliases }}</h2>
-            <h3>{{ hero.deck }}</h3>
-            <img v-bind:src="`${marvel_hero.thumbnail.path}/detail.jpg`" alt="" />
-            <p>{{ marvel_hero.thumbnail.path }}</p>
-            <br />
-            <p>{{ hero.first_appeared_in_issue.name }} # {{ hero.first_appeared_in_issue.issue_number }}</p>
-            <a v-bind:href="`${hero.api_detail_url} + {}`">Hero Page Comicvine - No APIKEY</a>
+            <h1 class="display-2 fw-bolder text-center" >{{ hero.name }}</h1>
+            <h2 class="display-5 fw-bolder text-center">{{ hero.real_name }}</h2>
+            <div v-html="hero.aliases" class="display-6 text-center"></div>
+            <!-- <h2>Aliases: {{ hero.aliases }}</h2> -->
+            <hr class="rounded">
+            <h3>Origin Story: {{ hero.deck }}</h3>
+            <hr class="rounded">
+            <h4>First Appearance Issue: {{ hero.first_appeared_in_issue.name }} # {{ hero.first_appeared_in_issue.issue_number}}</h4>
+            <hr class="rounded">
+            <!-- <p>{{marvel_hero.url}}</p> -->
+            <a class="display-5 fw-bolder text-center" :href="`${marvel_hero.url}`" target="_blank">{{hero.name}} Comics Available Now at Marvel.com</a>
+            <div v-html="hero.description"></div>
+            
+            
+            
+            
+
           </div>
         </div>
       </div>
@@ -83,14 +99,20 @@ export default {
 </template>
 
 <style>
-.backgrounder {
-  background-repeat: no-repeat;
-  width: 100%;
+.image-fita {
+  /* background-repeat: no-repeat; */
+
+  /* width: 100%;
   background-size: cover;
+  min-height: 700px; */
   background-position: center;
   background-color: black;
-  min-height: 100vh;
+  min-height: 80vh;
   /* border: 1px solid pink; */
   color: white;
+}
+
+.home {
+  background-color: black;
 }
 </style>
