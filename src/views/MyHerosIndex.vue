@@ -75,7 +75,7 @@
             <div class="col-md-8">
               <div class="row"><h2>{{my_hero.hero.name}} - {{my_hero.hero.subname}}</h2></div>          
               <h5>{{my_hero.hero.game_description}}</h5>
-              
+
               <div class="power-row">
                 <div class="row">
                   <div class="col-md2">
@@ -130,6 +130,7 @@
             <div class="col-md-2"><img v-bind:src="my_hero.hero.mpq_art_url" class="img-fluid" alt=""></div>
           </div>
           <button v-on:click="destroyMyHero(my_hero)">Destroy Hero</button>
+          <a :href="`/comicvine/?q=${my_hero.hero.name}`">Hero Achievements</a>
         </div>
 
 
