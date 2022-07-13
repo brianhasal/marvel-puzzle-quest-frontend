@@ -114,7 +114,7 @@
               <h5 class="card-title">{{hero.name}} <h6>{{hero.stars}} Stars</h6></h5> 
               <!-- if subname exists, add subname here -->
 
-              <button class="btn btn-primary">Add to Roster</button>
+              <button class="btn btn-primary" v-on:click="createMyHero(hero)">Add to Roster</button>
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="`#hero${hero.id}`">Powers</button>
 
 

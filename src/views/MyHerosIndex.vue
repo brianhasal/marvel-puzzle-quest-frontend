@@ -54,12 +54,90 @@
     <h1>My Heroes</h1>
     <div v-for="my_hero in my_heros" v-bind:key="my_hero.id">
       <div>
-        <star-rating v-model:rating=my_hero.first_power_count @update:rating ="setRating(rating,my_hero)"></star-rating>
-        <h2>{{my_hero.first_power_count}}</h2>
-        <h2>{{my_hero.second_power_count}}</h2>
-        <h2>{{my_hero.third_power_count}}</h2>
+        <!-- <div class="row">
+          <span class="border border-dark">
+            <div class="col-md-3"><img :href="`${my_hero.cover_url}`"></div>
+          </span>
+          <span class="border border-dark">
+            <div class="col-md-6">.col-md-6</div>
+          </span>
+          <span class="border border-dark">
+            <div class="col-md-3">.col-md-3</div>
+          </span>
+        </div> -->
+
+        <div>
+          <div class="row">
+            <div class="col-md-2"><img v-bind:src="my_hero.hero.cover_url" class="img-fluid" alt=""></div>
+            
+            
+            
+            <div class="col-md-8">
+              <div class="row"><h2>{{my_hero.hero.name}} - {{my_hero.hero.subname}}</h2></div>          
+              <h5>{{my_hero.hero.game_description}}</h5>
+              
+              <div class="power-row">
+                <div class="row">
+                  <div class="col-md2">
+                    <div class="row"><star-rating v-model:rating=my_hero.first_power_count @update:rating ="setRating(rating,my_hero)" v-bind:star-size="17"></star-rating></div>
+                    <div class="row">{{my_hero.hero.first_power_color}} {{my_hero.hero.first_power_cost}}</div>
+                  </div>
+                  <div class="col-md2">
+                    <div class="row">{{my_hero.hero.first_power_name}}</div>
+                  </div>
+                  <div class="col-md4">
+                    <div class="row">{{my_hero.hero.first_power_description}}</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="power-row">
+                <div class="row">
+                  <div class="col-md2">
+                    <div class="row"><star-rating v-model:rating=my_hero.second_power_count @update:rating ="setRating(rating,my_hero)" v-bind:star-size="17"></star-rating></div>
+                    <div class="row">{{my_hero.hero.second_power_color}} {{my_hero.hero.second_power_cost}}</div>
+                  </div>
+                  <div class="col-md2">
+                    <div class="row">{{my_hero.hero.second_power_name}}</div>
+                  </div>
+                  <div class="col-md4">
+                    <div class="row">{{my_hero.hero.second_power_description}}</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="power-row">
+                <div class="row">
+                  <div class="col-md2">
+                    <div class="row"><star-rating v-model:rating=my_hero.third_power_count @update:rating ="setRating(rating,my_hero)" v-bind:star-size="17"></star-rating></div>
+                    <div class="row">{{my_hero.hero.third_power_color}} {{my_hero.hero.third_power_cost}}</div>
+                  </div>
+                  <div class="col-md2">
+                    <div class="row">{{my_hero.hero.third_power_name}}</div>
+                  </div>
+                  <div class="col-md4">
+                    <div class="row">{{my_hero.hero.third_power_description}}</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+
+
+
+            <div class="col-md-2"><img v-bind:src="my_hero.hero.mpq_art_url" class="img-fluid" alt=""></div>
+          </div>
+          <button v-on:click="destroyMyHero(my_hero)">Destroy Hero</button>
+        </div>
+
+
+
+
+
       </div>
-      <div class="my_heroesInfo">
+      <!-- <div class="my_heroesInfo">
         <img v-bind:src="my_hero.hero.cover_url" alt="">
         <img v-bind:src="my_hero.hero.mpq_art_url" alt="">
         <h1>{{my_hero.hero.name}} - {{my_hero.hero.subname}}</h1>
@@ -97,9 +175,13 @@
 
           <button v-on:click="destroyMyHero(my_hero)">Destroy Hero</button>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
-<style></style>
+<style>
+.row {
+  
+}
+</style>
