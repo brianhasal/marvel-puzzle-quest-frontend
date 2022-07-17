@@ -27,6 +27,7 @@
       <p class="fw-bold text-center text-white mb-1 "></p>
     </div>
     <div class="container text-white">
+      <div class="display-6">WHAT IS THIS?!</div>
       <p>
         I play a game called Marvel Puzzle Quest, and it's had a steady community of players for the past 8 years. Known for innovating match-3 games by adding RPG elements, the makers of Puzzle Quest have built a quality product based around a solid IP that is in no danger of slowing down. The day I start playing, I will gain access to Iron Man and Black Widow, each with one special ability. Each character will eventually have three special abilities. I can activate these abilities after matching enough like colors that I’m accruing at the top of the screen. Winning these battles can yield tokens that can be exchanged for cards. These cards can power up my existing team’s special moves up to five times each, or help me collect brand new heroes. With more than 250 characters, keeping track of that much information can be cumbersome on mobile devices. On a base level, my app helps me track my collection, but it does a bit more.
       </p>
@@ -45,6 +46,7 @@
       <p>
         By comparison, the constructor method I built to assemble to urls for Comicvine couldn’t have been more user-friendly. By tacking the url onto the back of the url, I gained almost instant access to a more comprehensive API than Marvel’s, if I’m being honest.
       </p>
+      <div class="display-6">WHAT CAN I DO? </div>
       <p>
         Feel free to sign up with a dummy email account and password. 
         From there, you will be delivered to the index of all of my sample heroes (9 in total)
