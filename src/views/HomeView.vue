@@ -47,15 +47,15 @@
         By comparison, the constructor method I built to assemble to urls for Comicvine couldn’t have been more user-friendly. By tacking the url onto the back of the url, I gained almost instant access to a more comprehensive API than Marvel’s, if I’m being honest.
       </p>
       <div class="display-6">WHAT CAN I DO? </div>
-      <p>
-        Feel free to sign up with a dummy email account and password, or use <p class="p.i">email</p>: a@test.com, <p class="p.i">password</p> password<br/>
+      <part>
+        Feel free to sign up with a dummy email account and password, or use <p class="p.i">email</p>: a@test.com, <p class="p.i">password</p>: password<br/>
         From there, you will be delivered to the index of all of my sample heroes (9 in total)
-      </p>
+      </part>
       <p>
         Clicking on the "Powers" button raises a modal (pop-up) containing the color, cost, name, and description for each of their particular powers. 
       </p>
       <p>
-        Following the modal's linksends me to that character's show page, which is really just an excuse to look at a higher resolution version of the art. 
+        Following the modal's link sends me to that character's show page, which is really just an excuse to look at a higher resolution version of the art. 
       </p>
       <p>
         Back on the All Heroes page, because I'm signed in, I can add heroes to my team here, and they are added to my team on the Roster Page. 
