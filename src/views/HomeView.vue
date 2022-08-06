@@ -47,10 +47,11 @@
         By comparison, the constructor method I built to assemble to urls for Comicvine couldn’t have been more user-friendly. By tacking the url onto the back of the url, I gained almost instant access to a more comprehensive API than Marvel’s, if I’m being honest.
       </p>
       <div class="display-6">WHAT CAN I DO? </div>
-      <part>
-        Feel free to sign up with a dummy email account and password, or use <p class="p.i">email</p>: a@test.com, <p class="p.i">password</p>: password<br/>
-        From there, you will be delivered to the index of all of my sample heroes (9 in total)
-      </part>
+        <div>
+          Feel free to sign up with a dummy email account and password, or use <br/>email: a@test.com<br/>
+          <p class="p.i">password: password</p><br/>
+          <p>From there, you will be delivered to the index of all of my sample heroes (9 in total)</p>
+        </div>
       <p>
         Clicking on the "Powers" button raises a modal (pop-up) containing the color, cost, name, and description for each of their particular powers. 
       </p>
