@@ -48,7 +48,7 @@
       </p>
       <div class="display-6">WHAT CAN I DO? </div>
       <p>
-        Feel free to sign up with a dummy email account and password. 
+        Feel free to sign up with a dummy email account and password, or use <p class="p.i">email</p>: a@test.com, <p class="p.i">password</p> password<br/>
         From there, you will be delivered to the index of all of my sample heroes (9 in total)
       </p>
       <p>
@@ -92,5 +92,7 @@
 </template>
 
 <style>
-
+p.i {
+  font-style: italic;
+}
 </style>
