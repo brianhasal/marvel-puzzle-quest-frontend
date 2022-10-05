@@ -15,7 +15,7 @@
     <h1 class="display-3 fw-bolder text-center text-white mb-1 ">Sample Website, by Brian Hasal</h1>
     <h3 class="display-6 fw-bolder text-center text-white mb-1 "><a href="https://github.com/brianhasal">github.com/brianhasal</a> | <a href="https://www.linkedin.com/in/brianhasal/">linkedin.com/in/brianhasal/</a></h3>
     <h3 class="fw-bolder text-center text-white mb-1 ">
-      <a href="mailto:brian.hasal@gmail.com">brian.hasal@gmail.com</a> | <a href="src/assets/Brian Hasal - Resume.pdf">Resume</a>
+      <a href="mailto:brian.hasal@gmail.com">brian.hasal@gmail.com</a>
     </h3>
     <div>
       <h4 class="fw-bolder text-center text-white mb-1 ">
@@ -48,8 +48,8 @@
       </p>
       <div class="display-6">WHAT CAN I DO? </div>
         <div>
-          Feel free to sign up with a dummy email account and password, or use <br/>email: a@test.com<br/>
-          <p class="p.i">password: password</p><br/>
+          Feel free to sign up with a dummy email account and password, or use <br/><br/><p>email: a@test.com</p><br/>
+          <p class="p.i">password: password</p>
           <p>From there, you will be delivered to the index of all of my sample heroes (9 in total)</p>
         </div>
       <p>
